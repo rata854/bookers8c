@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users,only: [:show,:index,:edit,:update]
   resources :books
-  resources :groups
+  resources :groups do
+  get 'join' => 'groups#join'
+  end
 end
